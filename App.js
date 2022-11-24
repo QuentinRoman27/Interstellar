@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  ScrollView,
+  Platform,
+  Image,
+} from "react-native";
+import colors from "./assets/styles/colors";
+import Constants from "expo-constants";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style="light" />
+      <ScrollView style={styles.ScrollView}>
+        <View style={styles.header}>
+          <Image style={require("./assets/img/imdb.png")} />
+        </View>
+        <View style={styles.topPart}></View>
+        <View style={styles.bottomPart}></View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: colors.bg,
+  },
+  header: {
+    height: 60,
+    backgroundColor: colors.grey,
+    paddingHorizontal: 20,
   },
 });
